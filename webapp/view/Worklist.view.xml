@@ -1,0 +1,114 @@
+<mvc:View controllerName="zwf.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<Page id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>worklistViewTitle}">
+		<content>
+			<Table id="table" width="auto" class="sapUiResponsiveMargin"
+				items="{ path: '/TaskSet', sorter: { path: 'ZWfDocument', descending: false } }" noDataText="{i18n>tableNoDataText}"
+				busyIndicatorDelay="{worklistView>/tableBusyDelay}" growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished">
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				
+				
+			<columns>
+						<Column id="docColumn">
+						<Text text="{i18n>tableDocColumnTitle}" id="docColumnTitle"/>
+					</Column>
+					
+						<Column id="textColumn" demandPopin="true"
+    						minScreenWidth="Tablet">
+						<Text text="{i18n>tableTextColumnTitle}" id="textColumnTitle"/>
+					</Column>
+					
+					<Column id="procidColumn"  demandPopin="false"
+    						 minScreenWidth="Tablet">
+						<Text text="{i18n>tableProcidColumnTitle}" id="procidColumnTitle"/>
+					</Column>
+					
+					<Column id="taskidColumn"  demandPopin="false"
+    						minScreenWidth="Tablet">
+						<Text text="{i18n>tableTaskidColumnTitle}" id="taskidColumnTitle"/>
+					</Column>
+					
+					<Column id="userColumn" demandPopin="false"
+    						 minScreenWidth="Tablet">
+						<Text text="{i18n>tableUserColumnTitle}" id="userColumnTitle"/>
+					</Column>
+					
+					<Column id="giorniColumn" demandPopin="true"
+    						 minScreenWidth="Tablet">
+						<Text text="{i18n>tableGiorniColumnTitle}" id="giorniColumnTitle"/>
+					</Column>
+					
+					
+					
+					<Column id="currencyColumn" hAlign="Right" demandPopin="false"
+    						 minScreenWidth="Tablet">
+						<Text text="{i18n>tableCurrencyColumnTitle}" id="currencyColumnTitle"/>
+					</Column>
+					
+					<Column id="unitNumberColumn" hAlign="Right">
+						<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+					</Column>
+				</columns>
+				
+				
+				<items>
+					<ColumnListItem
+						type="Navigation"
+						press="onPress">
+						<cells>
+							<ObjectIdentifier
+								title="{ZWfDocument}"/>
+								
+							<Text text= "{ZWfText}"/>
+								
+							
+							<Text text="{ZWfProcid}"/>
+								
+								<Text text="{ZWfTaskid}"/>
+								
+								<Text text="{ZWfUtente}"/>
+								
+								<ObjectNumber
+								number="{ZWfGiorni}"
+								state="{
+					               path: 'ZWfGiorni',
+					               formatter: '.formatter.quantityState'}"
+					               />
+								
+								
+								<Text text="{ZWfValuta}"/>
+								
+								
+							<ObjectNumber
+								number="{
+									path: 'ZWfValoreDocumento',
+									formatter: '.formatter.numberUnit'
+								}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				
+				
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar id="footerToolbar">
+				<ToolbarSpacer/>
+				<Button id="shareButton" tooltip="{i18n>shareTooltip}" icon="sap-icon://action" press="onSharePress">
+					<dependents>
+						<ActionSheet id="shareSheet" showCancelButton="true" placement="Top">
+							<buttons>
+								<Button id="shareEmail" icon="sap-icon://email" text="{i18n>shareSendEmail}" press="onShareEmailPress"/>
+								<Button id="shareInJam" icon="sap-icon://jam" text="{i18n>shareOnJamTitle}" press="onShareInJamPress" visible="{FLP>/isShareInJamActive}"/>
+								<footerbar:AddBookmarkButton id="shareTile" appData="{ path: 'worklistView>/saveAsTileTitle', formatter: '.formatter.shareTileData' }"/>
+							</buttons>
+						</ActionSheet>
+					</dependents>
+				</Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
