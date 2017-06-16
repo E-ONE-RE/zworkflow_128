@@ -18,4 +18,4 @@ Enjoy development!
 
 **test 2 from git
 
-** test 3 from ide
+**test 3 from git corrected
