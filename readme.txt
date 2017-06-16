@@ -14,17 +14,4 @@ Enjoy development!
 Enjoy development!
 >>>>>>> 9878fae629bf4bdacbb7b8f258bbf64ec74dfd71
 
-** test2
-
-** test3
-
-** test4
-** test5
-
-** test 6 from git
-<<<<<<< HEAD
-** test 7 from webide
-=======
-
-** test 7 from git
->>>>>>> branch 'master' of https://github.com/E-ONE-RE/zworkflow_128.git
+**test 1 from git
