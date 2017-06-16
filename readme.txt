@@ -15,3 +15,5 @@ Enjoy development!
 >>>>>>> 9878fae629bf4bdacbb7b8f258bbf64ec74dfd71
 
 **test 1 from git
+
+**test 2 from git
