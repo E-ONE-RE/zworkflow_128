@@ -22,4 +22,9 @@ Enjoy development!
 ** test5
 
 ** test 6 from git
+<<<<<<< HEAD
 ** test 7 from webide
+=======
+
+** test 7 from git
+>>>>>>> branch 'master' of https://github.com/E-ONE-RE/zworkflow_128.git
