@@ -17,3 +17,5 @@ Enjoy development!
 **test 1 from git
 
 **test 2 from git
+
+** test 3 from ide
